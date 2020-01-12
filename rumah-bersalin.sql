@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.0.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Waktu pembuatan: 17 Bulan Mei 2019 pada 00.02
--- Versi server: 10.3.14-MariaDB-1:10.3.14+maria~bionic
--- Versi PHP: 7.2.14
+-- Waktu pembuatan: 12 Jan 2020 pada 06.10
+-- Versi server: 10.4.11-MariaDB-1:10.4.11+maria~bionic
+-- Versi PHP: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -39,8 +39,7 @@ CREATE TABLE `data_dokter` (
 --
 
 INSERT INTO `data_dokter` (`id_dokter`, `nama`, `telepon`) VALUES
-(4, 'Panca Course', '0822657878'),
-(3, 'Ridwan Dwi Susilo', '08768668767');
+(5, 'Ridwan', '85814431078');
 
 -- --------------------------------------------------------
 
@@ -82,7 +81,7 @@ CREATE TABLE `data_obat` (
 --
 
 INSERT INTO `data_obat` (`id_obat`, `kode_obat`, `nama`, `stok`, `harga`) VALUES
-(1, 'O-1', 'OBH', 3, 5000),
+(1, 'O-1', 'OBH', 1, 5000),
 (2, 'O-2', 'Procold', 4, 8000);
 
 -- --------------------------------------------------------
@@ -107,7 +106,7 @@ CREATE TABLE `data_pasien` (
 --
 
 INSERT INTO `data_pasien` (`id_pasien`, `reg`, `nama`, `umur`, `alamat`, `suami`, `pekerjaan`, `pendidikan`) VALUES
-(9, 'REG-001', 'Ratih', '25', 'Indonesia', 'Udin', 'Guru', 'SMA');
+(10, 'REG-001', 'Ridwan Dwi Susilo', '22', 'Kp. Sukamantri RT/RW 08/02', 'Who', 'Supir', 'SMK');
 
 -- --------------------------------------------------------
 
@@ -184,7 +183,7 @@ CREATE TABLE `data_transaksi_obat` (
 --
 
 INSERT INTO `data_transaksi_obat` (`id_transaksi_obat`, `reg`, `id_obat`, `biaya`, `jumlah`) VALUES
-(1, 'REG-001', 1, 5000, 1);
+(2, 'REG-001', 1, 10000, 2);
 
 --
 -- Trigger `data_transaksi_obat`
@@ -226,7 +225,11 @@ CREATE TABLE `transaksi` (
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `reg`, `id_dokter`, `id_kamar`, `id_rawat_inap`, `id_rawat_jalan`, `id_transaksi_obat`, `bhp`, `dpjp`, `kebersihan`, `konsultasi`, `visite`, `infus`, `total`, `tanggal`) VALUES
-(1, 'REG-001', 3, 3, 5, NULL, 1, 10000, 1000, 1000, 9000, 1000, NULL, 1227000, '2019-05-01');
+(1, 'REG-001', 3, 3, 5, NULL, 1, 10000, 1000, 1000, 9000, 1000, NULL, 1227000, '2019-05-01'),
+(2, 'REG-001', 0, 0, 0, NULL, 2, 5000, 5000, 50000, 50000, 5000, NULL, 125000, '2020-01-12'),
+(3, 'REG-001', 5, 1, 4, NULL, 2, 5000, 5000, 50000, 50000, 5000, NULL, 725000, '2020-01-12'),
+(4, 'REG-001', 5, NULL, NULL, 3, 2, NULL, NULL, NULL, NULL, NULL, NULL, 110000, '2020-01-14'),
+(5, 'REG-001', 5, 1, 5, NULL, 2, NULL, 10000, 10000, NULL, NULL, 10000, 1140000, '2020-01-16');
 
 -- --------------------------------------------------------
 
@@ -333,7 +336,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `data_dokter`
 --
 ALTER TABLE `data_dokter`
-  MODIFY `id_dokter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_dokter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_kamar`
@@ -351,7 +354,7 @@ ALTER TABLE `data_obat`
 -- AUTO_INCREMENT untuk tabel `data_pasien`
 --
 ALTER TABLE `data_pasien`
-  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pasien` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_rawat_inap`
@@ -375,13 +378,13 @@ ALTER TABLE `data_rekam_medis`
 -- AUTO_INCREMENT untuk tabel `data_transaksi_obat`
 --
 ALTER TABLE `data_transaksi_obat`
-  MODIFY `id_transaksi_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_transaksi_obat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
@@ -393,3 +396,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

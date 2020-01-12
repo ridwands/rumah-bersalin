@@ -143,9 +143,9 @@ class Laporaninap extends CI_Controller {
          $pdf->Ln(8);
          $pdf->SetFont('Arial','',8);
          $pdf->Cell(10,6,'No',1,0);
-         $pdf->Cell(30,6,'No Reg',1,0);
+         $pdf->Cell(20,6,'No Reg',1,0);
          $pdf->Cell(30,6,'Tanggal',1,0);
-         $pdf->Cell(20,6,'Nama Pasien',1,0);
+         $pdf->Cell(30,6,'Nama Pasien',1,0);
          $pdf->Cell(20,6,'Nama Dokter',1,0);
          $pdf->Cell(20,6,'Nama Kamar',1,0);
          $pdf->Cell(20,6,'Biaya Inap',1,0);
@@ -160,9 +160,9 @@ class Laporaninap extends CI_Controller {
          $no=1;
          foreach ($transaksi as $rowtransaksi) {
            $pdf->Cell(10,6,$no++,1,0);
-           $pdf->Cell(30,6,$rowtransaksi->reg,1,0);
+           $pdf->Cell(20,6,$rowtransaksi->reg,1,0);
            $pdf->Cell(30,6,$rowtransaksi->tanggal,1,0);
-           $pdf->Cell(20,6,$rowtransaksi->nama_pasien,1,0);
+           $pdf->Cell(30,6,$rowtransaksi->nama_pasien,1,0);
            $pdf->Cell(20,6,$rowtransaksi->nama_dokter,1,0);
            $pdf->Cell(20,6,$rowtransaksi->nama_kamar,1,0);
            $pdf->Cell(20,6,"Rp. ".number_format($rowtransaksi->biaya_rawat_inap),1,0);

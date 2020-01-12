@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body{
-    background-image:url(http://hospital.umm.ac.id/files/image/RSUMM%20DPN2.jpg);
+    background-image:url();
    
     background-size: 100%;
 }

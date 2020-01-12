@@ -23,7 +23,7 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('http://hospital.umm.ac.id/files/image/RSUMM%20DPN2.jpg');
+background-image: url();
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
